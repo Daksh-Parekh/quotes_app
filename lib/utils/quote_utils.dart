@@ -408,6 +408,219 @@ List<Map> allQuoteData = [
   },
 ];
 
+//Funny Qutes List
+List<Map<String, dynamic>> funnyQuotes = [
+  {
+    "quote":
+        "I am so clever that sometimes I don't understand a single word of what I am saying.",
+    "author": "Oscar Wilde",
+    "category": "funny",
+    "date": "1890",
+    "source": "The Picture of Dorian Gray",
+    "context": "Wilde's humorous take on intelligence",
+    "popularity": "High",
+    "likes": 8500,
+    "favorites": 3200,
+    "shares": 1800,
+    "comments": 700
+  },
+  {
+    "quote": "I refuse to join any club that would have me as a member.",
+    "author": "Groucho Marx",
+    "category": "funny",
+    "date": "1959",
+    "source": "Interview",
+    "context": "Marx's witty comment on exclusivity",
+    "popularity": "High",
+    "likes": 9800,
+    "favorites": 4000,
+    "shares": 2200,
+    "comments": 850
+  },
+  {
+    "quote": "My fake plants died because I did not pretend to water them.",
+    "author": "Mitch Hedberg",
+    "category": "funny",
+    "date": "2002",
+    "source": "Stand-up performance",
+    "context": "Hedberg's deadpan humor about plants",
+    "popularity": "Medium",
+    "likes": 7300,
+    "favorites": 2600,
+    "shares": 1500,
+    "comments": 500
+  },
+  {
+    "quote": "Behind every great man is a woman rolling her eyes.",
+    "author": "Jim Carrey",
+    "category": "funny",
+    "date": "2005",
+    "source": "Interview",
+    "context": "Carrey on relationships",
+    "popularity": "High",
+    "likes": 9600,
+    "favorites": 3900,
+    "shares": 2100,
+    "comments": 900
+  },
+  {
+    "quote":
+        "I dream of a better tomorrow, where chickens can cross the road and not be questioned about their motives.",
+    "author": "Anonymous",
+    "category": "funny",
+    "date": "Unknown",
+    "source": "Internet Meme",
+    "context": "Humorous take on the classic joke",
+    "popularity": "High",
+    "likes": 10500,
+    "favorites": 4300,
+    "shares": 2500,
+    "comments": 980
+  },
+  {
+    "quote":
+        "I haven't spoken to my wife in years. I didn't want to interrupt her.",
+    "author": "Rodney Dangerfield",
+    "category": "funny",
+    "date": "1980",
+    "source": "Stand-up performance",
+    "context": "Dangerfield on marriage",
+    "popularity": "High",
+    "likes": 8100,
+    "favorites": 3000,
+    "shares": 1900,
+    "comments": 750
+  },
+  {
+    "quote":
+        "The only mystery in life is why the kamikaze pilots wore helmets.",
+    "author": "Al McGuire",
+    "category": "funny",
+    "date": "1970",
+    "source": "Interview",
+    "context": "McGuire's humorous observation",
+    "popularity": "Medium",
+    "likes": 6800,
+    "favorites": 2400,
+    "shares": 1600,
+    "comments": 500
+  },
+  {
+    "quote": "Age is something that doesn't matter, unless you are a cheese.",
+    "author": "Luis Buñuel",
+    "category": "funny",
+    "date": "1964",
+    "source": "Interview",
+    "context": "Buñuel's humorous take on aging",
+    "popularity": "Medium",
+    "likes": 7400,
+    "favorites": 2700,
+    "shares": 1700,
+    "comments": 600
+  },
+  {
+    "quote": "A day without sunshine is like, you know, night.",
+    "author": "Steve Martin",
+    "category": "funny",
+    "date": "1977",
+    "source": "Comedy Album",
+    "context": "Martin's absurd humor",
+    "popularity": "High",
+    "likes": 9600,
+    "favorites": 3800,
+    "shares": 2100,
+    "comments": 850
+  },
+  {
+    "quote": "People say nothing is impossible, but I do nothing every day.",
+    "author": "A.A. Milne",
+    "category": "funny",
+    "date": "1926",
+    "source": "Winnie the Pooh",
+    "context": "Milne's humor through Pooh's perspective",
+    "popularity": "High",
+    "likes": 10200,
+    "favorites": 4100,
+    "shares": 2400,
+    "comments": 920
+  },
+  {
+    "quote": "I'm writing a book. I've got the page numbers done.",
+    "author": "Steven Wright",
+    "category": "funny",
+    "date": "1987",
+    "source": "Stand-up performance",
+    "context": "Wright's minimalist humor",
+    "popularity": "Medium",
+    "likes": 7100,
+    "favorites": 2600,
+    "shares": 1400,
+    "comments": 520
+  },
+  {
+    "quote": "Life is short. Smile while you still have teeth.",
+    "author": "Anonymous",
+    "category": "funny",
+    "date": "Unknown",
+    "source": "Internet Meme",
+    "context": "A lighthearted reminder to enjoy life",
+    "popularity": "High",
+    "likes": 9800,
+    "favorites": 4000,
+    "shares": 2200,
+    "comments": 800
+  },
+  {
+    "quote": "I can resist everything except temptation.",
+    "author": "Oscar Wilde",
+    "category": "funny",
+    "date": "1890",
+    "source": "The Picture of Dorian Gray",
+    "context": "Wilde's wit on self-control",
+    "popularity": "High",
+    "likes": 9200,
+    "favorites": 3700,
+    "shares": 2000,
+    "comments": 850
+  },
+  {
+    "quote":
+        "A bank is a place that will lend you money if you can prove that you don't need it.",
+    "author": "Bob Hope",
+    "category": "funny",
+    "date": "1965",
+    "source": "Stand-up performance",
+    "context": "Hope's humor about finances",
+    "popularity": "High",
+    "likes": 8300,
+    "favorites": 3200,
+    "shares": 1800,
+    "comments": 750
+  },
+  {
+    "quote":
+        "Before you judge a man, walk a mile in his shoes. After that who cares? He's a mile away and you've got his shoes!",
+    "author": "Billy Connolly",
+    "category": "funny",
+    "date": "1980",
+    "source": "Stand-up performance",
+    "context": "Connolly's humorous take on empathy",
+    "popularity": "High",
+    "likes": 11500,
+    "favorites": 4600,
+    "shares": 2500,
+    "comments": 1000
+  }
+];
+
+List<FunnyQuotesModel> funQuotes = funnyQuotes
+    .map(
+      (e) => FunnyQuotesModel.funnyQuoteFromMap(
+        data: e,
+      ),
+    )
+    .toList();
+
 List<QuotesModel> allQoutes = allQuoteData
     .map(
       (e) => QuotesModel.fromMap(

@@ -47,3 +47,14 @@ class QuotesModel {
         'comments': comments,
       };
 }
+
+class FunnyQuotesModel {
+  String quote;
+
+  FunnyQuotesModel(this.quote);
+  //Factory constructor for funny Quotes
+  factory FunnyQuotesModel.funnyQuoteFromMap({required Map data}) =>
+      FunnyQuotesModel(
+        data['quote'],
+      );
+}
