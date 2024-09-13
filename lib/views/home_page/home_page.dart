@@ -14,23 +14,25 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  @override
-  void initState() {
-    Future.delayed(Duration(seconds: 1), () {
-      Random rnd = Random();
-      int randomIndex = rnd.nextInt(funQuotes.length);
-      FunnyQuotesModel rndOutes = funQuotes[randomIndex];
+  // @override
+  // void initState() {
+  //   Future.delayed(Duration(seconds: 1), () {
+  //     Random rnd = Random();
+  //     int randomIndex = rnd.nextInt(funQuotes.length);
+  //     FunnyQuotesModel rndOutes = funQuotes[randomIndex];
 
-      showDialog(
-        context: context,
-        builder: (context) => AlertDialog(
-          title: Text("Let's Laugh 😂"),
-          content: Text("${rndOutes.quote}"),
-        ),
-      );
-    });
-    super.initState();
-  }
+  //     showDialog(
+  //       context: context,
+  //       builder: (context) => AlertDialog(
+  //         title: Text("Let's Laugh 😂"),
+  //         content: Text("${rndOutes.quote}"),
+  //       ),
+  //     );
+  //   });
+  //   super.initState();
+  // }
+
+  bool isCheck = false;
 
   @override
   Widget build(BuildContext context) {
@@ -69,28 +71,86 @@ class _HomePageState extends State<HomePage> {
       child: Scaffold(
         appBar: AppBar(
           title: const Text("Quote App"),
+          actions: [
+            IconButton(
+              onPressed: () {
+                setState(() {
+                  isCheck = !isCheck;
+                });
+              },
+              icon: isCheck
+                  ? Icon(Icons.grid_view_rounded)
+                  : Icon(Icons.list_rounded),
+            ),
+          ],
         ),
         body: Padding(
           padding: const EdgeInsets.all(16),
-          child: SingleChildScrollView(
-            child: Column(
-              children: allQoutes
-                  .map(
-                    (e) => Card(
-                      color: Colors.white,
-                      child: ListTile(
-                        title: Text(e.quote),
-                        subtitle: Text(
-                          "~${e.author}",
-                          style: const TextStyle(color: Colors.grey),
-                          textAlign: TextAlign.end,
-                        ),
+          child: isCheck
+              ? GridView.builder(
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                  ),
+                  itemCount: allQoutes.length,
+                  itemBuilder: (context, index) => Card(
+                    child: Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          Expanded(
+                            child: Text(
+                              allQoutes[index].quote,
+                              maxLines: 8,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
+                          Text(
+                            textAlign: TextAlign.end,
+                            "~ ${allQoutes[index].author}",
+                            style: TextStyle(
+                              color: Colors.grey,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
-                  )
-                  .toList(),
-            ),
-          ),
+                  ),
+                )
+              : ListView.builder(
+                  itemCount: allQoutes.length,
+                  itemBuilder: (context, index) => ListTile(
+                    title: Text(allQoutes[index].quote),
+                    subtitle: Text(
+                      "~ ${allQoutes[index].author}",
+                      style: TextStyle(
+                        color: Colors.grey,
+                      ),
+                      textAlign: TextAlign.end,
+                    ),
+
+                    // title: Text("${index + 1}"),
+                  ),
+                ),
+          // child: SingleChildScrollView(
+          //   child: Column(
+          //     children: allQoutes
+          //         .map(
+          //           (e) => Card(
+          //             color: Colors.white,
+          //             child: ListTile(
+          //               title: Text(e.quote),
+          //               subtitle: Text(
+          //                 "~${e.author}",
+          //                 style: const TextStyle(color: Colors.grey),
+          //                 textAlign: TextAlign.end,
+          //               ),
+          //             ),
+          //           ),
+          //         )
+          //         .toList(),
+          //   ),
+          // ),
         ),
       ),
     );
