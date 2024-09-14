@@ -86,6 +86,36 @@ flutter:
   #       - asset: fonts/TrajanPro.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
-  #
+  fonts:
+    - family: Suse
+      fonts:
+        - asset: lib\assets\fonts\SUSE-Regular.ttf
+    - family: PlayWrite
+      fonts:
+       - asset: lib\assets\fonts\PlaywriteCU-Regular.ttf
+    - family: NekroOne
+      fonts:
+        - asset: lib\assets\fonts\NerkoOne-Regular.ttf
+    - family: Aladin
+      fonts:
+        - asset: lib\assets\fonts\Aladin-Regular.ttf
+    - family: JaquesShadow
+      fonts:
+        - asset: lib\assets\fonts\JacquesFrancoisShadow-Regular.ttf
+    - family: Unifraktur
+      fonts:
+        - asset: lib\assets\fonts\UnifrakturCook-Bold.ttf
+    - family: caveat
+      fonts:
+        - asset: lib\assets\fonts\Caveat-Regular.ttf
+    - family: Gloria
+      fonts:
+        - asset: lib\assets\fonts\GloriaHallelujah-Regular.ttf
+    - family: RockSalt
+      fonts:
+        - asset: lib\assets\fonts\RockSalt-Regular.ttf
+    - family: Rubika
+      fonts:
+        - asset: lib\assets\fonts\RubikGlitchPop-Regular.ttf
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package

@@ -33,6 +33,7 @@ class _HomePageState extends State<HomePage> {
   // }
 
   bool isCheck = false;
+  final colors = Colors.primaries;
 
   @override
   Widget build(BuildContext context) {
@@ -87,39 +88,72 @@ class _HomePageState extends State<HomePage> {
         body: Padding(
           padding: const EdgeInsets.all(16),
           child: isCheck
-              ? GridView.builder(
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                  ),
-                  itemCount: allQoutes.length,
-                  itemBuilder: (context, index) => Card(
-                    child: Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          Expanded(
-                            child: Text(
-                              allQoutes[index].quote,
-                              maxLines: 8,
-                              overflow: TextOverflow.ellipsis,
-                            ),
+              ? Scrollbar(
+                  thickness: 8,
+                  radius: Radius.circular(10),
+                  interactive: true,
+                  thumbVisibility: true,
+                  // trackVisibility: true,
+                  child: GridView.builder(
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      childAspectRatio: 3 / 4,
+                    ),
+                    itemCount: allQoutes.length,
+                    itemBuilder: (context, index) => GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).pushNamed(
+                          'detail_page',
+                          arguments: allQoutes[index],
+                        );
+                      },
+                      child: Card(
+                        color: colors[index % 18],
+                        child: Padding(
+                          padding: const EdgeInsets.all(16.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              Expanded(
+                                child: Text(
+                                  allQoutes[index].quote,
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                  ),
+                                  maxLines: 5,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              ),
+                              Text(
+                                textAlign: TextAlign.end,
+                                "~ ${allQoutes[index].author}",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            ],
                           ),
-                          Text(
-                            textAlign: TextAlign.end,
-                            "~ ${allQoutes[index].author}",
-                            style: TextStyle(
-                              color: Colors.grey,
-                            ),
-                          ),
-                        ],
+                        ),
                       ),
                     ),
                   ),
                 )
-              : ListView.builder(
+              : ListView.separated(
+                  separatorBuilder: (context, index) => Divider(
+                    thickness: 3,
+                    color: Colors.black,
+                  ),
                   itemCount: allQoutes.length,
                   itemBuilder: (context, index) => ListTile(
+                    onTap: () {
+                      Navigator.of(context).pushNamed(
+                        'detail_page',
+                        arguments: allQoutes[index],
+                      );
+                    },
                     title: Text(allQoutes[index].quote),
                     subtitle: Text(
                       "~ ${allQoutes[index].author}",
